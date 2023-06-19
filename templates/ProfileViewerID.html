@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/ProfileViewerID.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=SF Pro Text:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="profile-viewerid">
+        <div class="status-bar6">
+          <div class="rectangle-parent13">
+              <div class="time13">9:27</div>
+              <img class="ui-icon6" alt="" src="static/public/ui.svg" />
+          </div>
+        </div>
+        <div class="main-content1">
+          <div class="profile-icon2">
+            <img class="ellipse-icon" alt="" src="static/public/ellipse@2x.png" />
+          </div>
+          <div class="name1">
+            <div class="larry-chang1" id="userName">Larry Chang</div>
+          </div>
+          <div class="idenity1">
+            <div class="div16">美食家</div>
+          </div>
+          <div class="switch-id1">
+            <div class="rectangle-parent1" id="groupContainer">
+              <div class="rectangle-div"></div>
+              <div class="div15">切換至餐廳管理人</div> 
+              <img class="switch-idenity-icon1" alt="" src="static/public/switch-idenity.svg"/>
+            </div>
+          </div>
+          <div class="location1">
+            <div class="div14">台北，台灣</div>
+          </div>
+          <div class="button1">
+            <div class="write-review-button1">
+              <div class="write-review-button-item"></div>
+              <div class="div12">寫食評</div>
+            </div>
+            <div class="write-review-button1">
+              <div class="write-review-button-item" id="write-review-button-item"></div>
+              <div class="div12">查看留言</div>
+            </div>
+          </div>
+          <div class="past-review">
+            <img class="frame-child" alt="" src="static/public/rectangle-25@2x.png"/>
+            <img class="frame-item" alt="" src="static/public/rectangle-24@2x.png" />
+            <img class="frame-inner" alt="" src="static/public/rectangle-23@2x.png"/>
+            <img class="rectangle-icon" alt="" src="static/public/rectangle-22@2x.png"/>
+            <img class="frame-child1" alt="" src="static/public/rectangle-21@2x.png"/>
+            <img class="frame-child2" alt="" src="static/public/rectangle-2@2x.png"/>
+          </div>
+        </div>
+      </div>
+        <div class="previous1">
+          <img class="previous-item" alt="" src="static/public/group-17955.svg" id="group"/>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var groupContainer = document.getElementById("groupContainer");
+      if (groupContainer) {
+        groupContainer.addEventListener("click", function (e) {
+          window.location.href = "/ProfileResturantID";
+        });
+      }
+      
+      var group = document.getElementById("group");
+      if (group) {
+        group.addEventListener("click", function (e) {
+          window.location.href = "/HomeScreen";
+        });
+      }
+
+      var writereviewbutton = document.getElementById("write-review-button-item");
+        if (writereviewbutton) {
+          writereviewbutton.addEventListener("click", function (e) {
+            var userNameElement = document.querySelector(".larry-chang1#userName");
+            var searchTerm = userNameElement.textContent;      
+            if (searchTerm) {
+              // Perform the search by redirecting to the search page with the searchTerm as a query parameter
+              window.location.href = "/search_comment_user?search=" + encodeURIComponent(searchTerm);
+            }
+          });
+        }
+      </script>
+  </body>
+</html>

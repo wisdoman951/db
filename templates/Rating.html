@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/Rating.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=SF Pro Text:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+    />
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <div class="rating">
+      <div class="send-button">
+        <div class="send-button1">
+          <div class="send-button-child" id="send-button"></div>
+          <div class="div50">送出</div>
+        </div>
+      </div>
+      <div class="comment-fill">
+        <div class="rectangle-parent10">
+          <div class="group-child12"></div>
+          <div class="div51" id="comment-text">
+            <input type="text" placeholder="寫下你的評論......" id="comment-input" />
+
+          </div>
+          <div class="line-div"></div>
+        </div>
+      </div>
+      <div class="mark3">
+        <div class="group-container">
+          <div class="div52">美味程度</div>
+          <div class="rate">
+            <input type="radio" id="star5-1" name="rate1" value="5" />
+            <label for="star5-1" title="text">5 stars</label>
+            <input type="radio" id="star4-1" name="rate1" value="4" />
+            <label for="star4-1" title="text">4 stars</label>
+            <input type="radio" id="star3-1" name="rate1" value="3" />
+            <label for="star3-1" title="text">3 stars</label>
+            <input type="radio" id="star2-1" name="rate1" value="2" />
+            <label for="star2-1" title="text">2 stars</label>
+            <input type="radio" id="star1-1" name="rate1" value="1" />
+            <label for="star1-1" title="text">1 star</label>
+          </div>
+        </div>
+        
+        <div class="group-container">
+          <div class="div52">服務品質</div>
+          <div class="rate">
+            <input type="radio" id="star5-2" name="rate2" value="5" />
+            <label for="star5-2" title="text">5 stars</label>
+            <input type="radio" id="star4-2" name="rate2" value="4" />
+            <label for="star4-2" title="text">4 stars</label>
+            <input type="radio" id="star3-2" name="rate2" value="3" />
+            <label for="star3-2" title="text">3 stars</label>
+            <input type="radio" id="star2-2" name="rate2" value="2" />
+            <label for="star2-2" title="text">2 stars</label>
+            <input type="radio" id="star1-2" name="rate2" value="1" />
+            <label for="star1-2" title="text">1 star</label>
+          </div>
+        </div>
+        
+        <div class="group-container">
+          <div class="div52">等待時間</div>
+          <div class="rate">
+            <input type="radio" id="star5-3" name="rate3" value="5" />
+            <label for="star5-3" title="text">5 stars</label>
+            <input type="radio" id="star4-3" name="rate3" value="4" />
+            <label for="star4-3" title="text">4 stars</label>
+            <input type="radio" id="star3-3" name="rate3" value="3" />
+            <label for="star3-3" title="text">3 stars</label>
+            <input type="radio" id="star2-3" name="rate3" value="2" />
+            <label for="star2-3" title="text">2 stars</label>
+            <input type="radio" id="star1-3" name="rate3" value="1" />
+            <label for="star1-3" title="text">1 star</label>
+          </div>
+        </div>
+        
+      </div>
+      <div class="sentence">
+        <div class="div55">請留下你寶貴的意見......
+        </div>
+      </div>
+      <div class="name3">
+        <div class="div56">
+          <span class="span2">清心福全</span>
+          <span class="span3"> </span>
+        </div>
+      </div>
+      <div class="top">
+        <img class="top-icon" alt="" src="static/public/top@2x.png" />
+      </div>
+      <div class="previous4">
+        <img
+          class="previous-child2"
+          alt=""
+          src="static/public/group-17955.svg"
+          id="group3"
+        />
+      </div>
+      <div class="status-bar5">
+        <div class="rectangle-parent11">
+          <div class="group-child16"></div>
+          <div class="time10">
+            <div class="time11">9:27</div>
+          </div>
+          <img class="ui-icon5" alt="" src="static/public/ui2.svg" />
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var sendButton = document.getElementById("send-button");
+      
+        if (sendButton) {
+          sendButton.addEventListener("click", function () {
+            var commentInput = document.getElementById("comment-input").value;
+            var rate1 = getSelectedRating("rate1");
+            var rate2 = getSelectedRating("rate2");
+            var rate3 = getSelectedRating("rate3");
+      
+            // Send the data to the server using AJAX
+            var xhr1 = new XMLHttpRequest();
+            xhr1.open("POST", "/update_scores");
+            xhr1.setRequestHeader("Content-Type", "application/json");
+      
+            xhr1.onreadystatechange = function () {
+              if (xhr1.readyState === XMLHttpRequest.DONE) {
+                if (xhr1.status === 200) {
+                  // Scores updated successfully
+                  var xhr2 = new XMLHttpRequest();
+                  xhr2.open("POST", "/insert_comment");
+                  xhr2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                  xhr2.onreadystatechange = function () {
+                    if (xhr2.readyState === XMLHttpRequest.DONE && xhr2.status === 200) {
+                      // Comment inserted successfully
+                      alert("Comment inserted successfully.");
+                      window.location.href = "/Restaurant";
+                    }
+                  };
+      
+                  var commentData = "comment=" + encodeURIComponent(commentInput);
+                  xhr2.send(commentData);
+                } else {
+                  alert("Failed to update scores. Please try again.");
+                }
+              }
+            };
+      
+            var scoreData = JSON.stringify({
+              score1: rate1,
+              score2: rate2,
+              score3: rate3,
+            });
+      
+            xhr1.send(scoreData);
+          });
+        }
+      });
+      
+      function getSelectedRating(radioName) {
+        var ratingElements = document.getElementsByName(radioName);
+        for (var i = 0; i < ratingElements.length; i++) {
+          if (ratingElements[i].checked) {
+            return ratingElements[i].value;
+          }
+        }
+        return null;
+      }      
+    </script>
+    <script>
+      var group3 = document.getElementById("group3");
+      if (group3) {
+        group3.addEventListener("click", function (e) {
+          window.location.href = "/Restaurant";
+        });
+      }
+      var sendbutton = document.getElementById("send-button");
+      if (sendbutton) {
+        sendbutton.addEventListener("click", function (e) {
+          window.location.href = "/Restaurant";
+        });
+      }
+      </script>
+  </body>
+</html>

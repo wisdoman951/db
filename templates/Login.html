@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>政大吃什麼</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  
+  <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/Login.css">
+  
+  <link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=SF Pro Text:wght@600&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+/>
+</head>
+<body>
+  <div class="login-container">
+    <h2>政大吃什麼</h2>
+
+    <div class="logo">
+        <img class="vector-icon" alt="" src="/static/public/app_icon.png" />
+      </div>
+    <input type="text" class="username-input" placeholder="Username" id="username">
+    <button class="login-button" id="login-button">Login</button>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var sendButton = document.getElementById("login-button");
+      
+        if (sendButton) {
+          sendButton.addEventListener("click", function () {
+            var userInput = document.getElementById("username");
+            var user = userInput.value;
+      
+            if (user) { // Check if the user input is not empty
+              var xhr = new XMLHttpRequest();
+              xhr.open("POST", "/login_check");
+              xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+              xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                  if (xhr.status === 200) {
+                    // User found in the database
+                    alert("Login successfully.");
+                    window.location.href = "/";
+                  } else if (xhr.status === 404) {
+                    // User not found in the database
+                    alert("Login failed, please check your username or password.");
+                  } else {
+                    // Other error occurred
+                    alert("An error occurred while processing your request.");
+                  }
+                }
+              };
+              xhr.send("username=" + encodeURIComponent(user));
+            } else {
+              alert("Please enter a username.");
+            }
+          });
+        }
+      });
+      
+  </script>
+</body>
+</html>

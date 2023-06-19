@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=SF Pro Text:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="splash" id="splashContainer">
+        <div class="logo">
+          <img class="vector-icon" alt="" src="/static/public/app_icon.png" />
+        </div>
+        <div class="app-name">
+          <div class="div">政大</div>
+          <div class="div1">吃什麼</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var splashContainer = document.getElementById("splashContainer");
+      if (splashContainer) {
+        splashContainer.addEventListener("click", function (e) {
+          window.location.href = "/HomeScreen";
+        });
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    
+    <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/HomeScreen.css">
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=SF Pro Text:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="home-screen">
+        <div class="status-bar6">
+          <div class="rectangle-parent13">
+              <div class="time13">9:27</div>
+              <img class="ui-icon6" alt="" src="static/public/ui.svg" />
+          </div>
+        </div>
+        <div class="main-content3">
+          <div class="top-bar">
+            <img class="side-menu-icon" alt="" src="static/public/side-menu.svg" id="sideMenu"/>
+            <img class="profile-icon3" alt="" src="static/public/profile-icon@2x.png"/>
+          </div>
+          <div class="slogan">
+            <b class="b7">
+              <p class="p1">煩惱在政大有什麼吃?</p>
+              <p class="p1">立即找找看</p>
+            </b>
+          </div>       
+          <div class="search-bar">
+            <form id="search-form" action="/search" method="GET">
+              <div class="search-field">
+                <input type="image" class="mag" alt="submit" src="static/public/mag.png" id="search-button" name="submit"/></span>
+                <input type="text" id="search" name="search" placeholder="輸入關鍵字找餐廳......">
+                <ul id="result-list"></ul>
+              </div>
+            </form>
+            <img class="search-bar-child" alt="" src="static/public/group-18097.svg" />
+            {% for row in data %}
+            <p>{{ row }}</p>
+            {% endfor %}
+          </div>
+
+          <div class="category1">
+            <div class="category-button-drink-parent">
+              <div class="category-button-drink" id="category-drink">
+                <div class="category-button-drink-child" name="飲料"></div>
+                <img class="mask-group-icon" alt="" src="static/public/mask-group@2x.png"/>
+                <b class="b1">飲料</b>
+              </div>
+              <div class="category-button-japanese">
+                <div class="category-button-japanese-child" name="日式"></div>
+                <img class="mask-group-icon" alt="" src="static/public/mask-group1@2x.png"/>
+                <b class="b1">日式</b>
+              </div>
+              <div class="category-button-taiwan">
+                <div class="category-button-japanese-child"></div>
+                <img class="mask-group-icon" alt="" src="static/public/mask-group2@2x.png"/>
+                <b class="b1">台式</b>
+              </div>
+              <div class="category-button-desert">
+                <div class="category-button-japanese-child"></div>
+                <img class="mask-group-icon" alt="" src="static/public/mask-group3@2x.png"/>
+                <b class="b1">甜點</b>
+              </div>
+              <div class="category-button-burger">
+                <div class="category-button-japanese-child"></div>
+                <img class="mask-group-icon" alt="" src="static/public/mask-group4@2x.png"/>
+                <b class="b1">漢堡</b>
+              </div>
+              <div class="category-button-western">
+                <div class="category-button-japanese-child"></div>
+                <img class="mask-group-icon" alt="" src="static/public/mask-group5@2x.png"/>
+                <b class="b1">西式</b>
+              </div>
+            </div>
+          </div>
+          <div class="hot-resturants">
+            <div class="div57">熱門餐廳</div>
+            <div class="parent9">
+              <div class="div58">查看更多</div>
+              <img class="path-3424-icon" alt="" src="static/public/path-3424.svg" />
+            </div>
+          </div>
+          <div class="popular-resturants">
+            <div class="resturants">
+              <img class="mcdonald-1-icon" alt="" src="static/public/mcdonald-1@2x.png"/>
+              <img class="yin-bistro-1" alt="" src="static/public/yin-bistro-1@2x.png"/>
+              <img class="yin-bistro-1" alt="" src="static/public/-11@2x.png" />
+            </div>
+          </div>
+          <!-- <div class="hot-blog">
+            <div class="div57">熱門評論</div>
+            <div class="parent9">
+              <div class="div58">查看更多</div>
+              <img class="path-3424-icon" alt="" src="./public/path-3424.svg" />
+            </div>
+          </div> -->
+          <!-- <div class="hot-review">
+            <div class="reviews">
+              <img class="hot-review-1-1-icon" alt="" src="./public/hot-review-1-1@2x.png"/>
+              <img class="hot-review-2-1-icon" alt="" src="./public/hot-review-2-1@2x.png"/>
+            </div>
+          </div> -->
+        </div>
+        <div class="bottom-bar">
+          <img class="bottom" alt="" src="static/public/bottom_bar.png" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var sideMenu = document.getElementById("sideMenu");
+      if (sideMenu) {
+        sideMenu.addEventListener("click", function (e) {
+          window.location.href = "/SideMenu";
+        });
+      }
+      </script>
+      <script>
+        var sideMenu = document.getElementById("sideMenu");
+        if (sideMenu) {
+          sideMenu.addEventListener("click", function (e) {
+            window.location.href = "/SideMenu";
+          });
+        }
+      </script>
+      <script>
+        var cateGory = document.getElementById("sideMenu");
+        if (sideMenu) {
+          sideMenu.addEventListener("click", function (e) {
+            window.location.href = "/SideMenu";
+          });
+        }
+      </script>
+      <script>
+        var drinkCategory = document.querySelector('.category-button-drink-child');
+        if (drinkCategory) {
+          drinkCategory.addEventListener("click", function (e) {
+            var searchTerm = this.getAttribute("name");
+      
+            if (searchTerm) {
+              // Perform the search by redirecting to the search page with the searchTerm as a query parameter
+              window.location.href = "/Category";
+            }
+          });
+        }
+      </script>
+      <script>
+        var drinkCategory = document.querySelector('.category-button-japanese-child');
+        if (drinkCategory) {
+          drinkCategory.addEventListener("click", function (e) {
+            var searchTerm = this.getAttribute("name");
+      
+            if (searchTerm) {
+              // Perform the search by redirecting to the search page with the searchTerm as a query parameter
+              window.location.href = "/search?search=" + encodeURIComponent(searchTerm);
+            }
+          });
+        }
+      </script>
+  </body>
+</html>

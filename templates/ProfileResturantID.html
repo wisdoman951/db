@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/ProfileResturantID.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=SF Pro Text:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="profile-resturantid">
+        <div class="status-bar6">
+          <div class="rectangle-parent13">
+              <div class="time13">9:27</div>
+              <img class="ui-icon6" alt="" src="static/public/ui.svg" />
+          </div>
+        </div>
+        <div class="main-content">
+          <div class="profile-icon1">
+            <img class="intersect-icon" alt="" src="static/public/intersect.png" />
+          </div>
+          <div class="name">
+            <div class="lazy-pasta" id="res-name">清心福全</div>
+          </div>
+          <div class="idenity">
+            <div class="div11">餐廳管理人</div>
+          </div>
+          <div class="switch-id">
+            <div class="rectangle-group" id="groupContainer">
+              <div class="group-item"></div>
+              <div class="div10">切換至美食家</div>
+              <img class="switch-idenity-icon" alt="" src="static/public/switch-idenity.svg"/>
+            </div>
+          </div>
+          <div class="location">
+            <div class="div9">台北，台灣</div>
+          </div>
+          <div class="button">
+            <div class="check-comment-button">
+              <div class="check-comment-button-child" id="check-comment-button-child"></div>
+              <div class="div7">查看留言</div>
+            </div>
+            <div class="check-comment-button">
+              <div class="check-comment-button-child"></div>
+              <div class="div7">餐廳資訊</div>
+            </div>
+          </div>
+        </div>
+        <div class="previous">
+          <img class="previous-child" alt="" src="static/public/group-17955.svg" id="group"/>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var groupContainer = document.getElementById("groupContainer");
+      if (groupContainer) {
+        groupContainer.addEventListener("click", function (e) {
+          window.location.href = "/ProfileViewerID";
+        });
+      }
+
+      var group = document.getElementById("group");
+      if (group) {
+        group.addEventListener("click", function (e) {
+          window.location.href = "/HomeScreen";
+        });
+      }
+
+      var resname = document.getElementById("check-comment-button-child");
+        if (resname) {
+          resname.addEventListener("click", function (e) {
+            var userNameElement = document.querySelector(".lazy-pasta#res-name");
+            var searchTerm = userNameElement.textContent;
+            if (searchTerm) {
+              // Perform the search by redirecting to the search page with the searchTerm as a query parameter
+              window.location.href = "/search_comment_res?search=" + encodeURIComponent(searchTerm);
+            }
+          });
+        }
+      </script>
+  </body>
+</html>

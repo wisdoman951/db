@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    
+    <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/SideMenu.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=SF Pro Text:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="side-menu">
+        <div class="status-bar6">
+          <div class="rectangle-parent13">
+              <div class="time13">9:27</div>
+              <img class="ui-icon6" alt="" src="static/public/ui.svg" />
+          </div>
+        </div>
+        <div class="content">
+          <div class="left-side">
+            <div class="personal-info">
+              <img class="profile-icon" alt="" src="static/public/ellipse@2x.png" />
+              <div class="basic-info">
+                <div class="larry-chang">Larry Chang</div>
+                <div class="gnccuedutw">111356363@g.nccu.edu.tw</div>
+              </div>
+            </div>
+            <div class="option">
+              <div class="function-bar">
+                <div class="group" id="groupContainer">
+                  <div class="div2">個人檔案</div>
+                  <img class="iconlybulkprofile" alt="" src="static/public/iconlybulkprofile.svg"/>
+                </div>
+                <div class="container">
+                  <div class="div2">聯絡我們</div>
+                  <img class="iconlybulkprofile" alt="" src="static/public/iconlybulkmessage.svg"/>
+                </div>
+                <div class="group-div">
+                  <div class="div2">設定</div>
+                  <img class="iconlybulksetting" alt="" src="static/public/iconlybulksetting.svg"/>
+                </div>
+                <div class="parent1">
+                  <div class="div5">協助與問題</div>
+                  <div class="iconlybulkhelps">
+                    <div class="iconlybulkhelps-child"></div>
+                    <div class="iconlybulkhelps-item"></div>
+                    <div class="iconlybulkhelps-inner"></div>
+                    <img class="vector-icon1" alt="" src="static/public/vector1.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="logout-button">
+              <div class="logout">
+                <div class="logout-child"></div>
+                <div class="div6">登出</div>
+                <img class="logout-item" alt="" src="static/public/group-18072.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="right-side" id="rightSideContainer">
+            <div class="capture-2-parent">
+              <img class="capture-2-icon" alt="" src="static/public/capture-2@2x.png" />
+              <div class="home-screendd-1"></div>
+              <img class="capture-1-icon" alt="" src="static/public/capture-1@2x.png" />
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <script>
+      var groupContainer = document.getElementById("groupContainer");
+      if (groupContainer) {
+        groupContainer.addEventListener("click", function (e) {
+          window.location.href = "./ProfileViewerID";
+        });
+      }
+      
+      var rightSideContainer = document.getElementById("rightSideContainer");
+      if (rightSideContainer) {
+        rightSideContainer.addEventListener("click", function (e) {
+          window.location.href = "./HomeScreen";
+        });
+      }
+      </script>
+  </body>
+</html>

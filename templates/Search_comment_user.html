@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Search Results</title>
+  </head>
+  <body>
+    <h1>Search Results</h1>
+    <ul>
+      {% for row in results %}
+        <li>
+          <strong>Restaurant ID:</strong> {{ row[0] }}<br>
+          <strong>Name:</strong> {{ row[1] }}<br>
+          <strong>Phone:</strong> {{ row[2] }}<br>
+          <strong>Address:</strong> {{ row[3] }}<br>
+          <strong>Opening Hours:</strong> {{ row[4] }} - {{ row[6] }}<br>
+          <strong>Type:</strong> {{ row[7] }}
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
