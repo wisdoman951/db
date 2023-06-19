@@ -1,10 +1,18 @@
+db final demo
+please unzip the static zip, and put it in the proper directory,
+Folder Structure:
+-db_demo
+ -mysql (upload to your local mysql and named: db)
+ -static (contain pictures and css file)
+ -templates (contain html file)
+ -app.py (flask app)
+ -package.json
+ -package-lock.json
 
-  # restaurant
-
-  Note: Please ensure you have installed <code><a href="https://nodejs.org/en/download/">nodejs</a></code>
-
-  To preview and run the project on your device:
-  1) Open project folder in <a href="https://code.visualstudio.com/download">Visual Studio Code</a>
-  2) In the terminal, run `npm install`
-  3) Run `npm start` to view project in browser
-  
+ START:
+1. Go to terminal
+2. Get your directory into folder which contain app.py
+3. enter: Python app.py
+4. Server will run at localhost's port 5000.
+5. In browser, enter http://localhost:5000/Login
+6. Start testing project
